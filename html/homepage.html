@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../js/homepage.js" defer></script>
+    <meta charset="UTF-8">
+    <title>Jake page</title>
+</head>
+<body>
+<div style="display: inline-block">
+    <label for="name">Company name:</label><br>
+    <input type="text" id="name" name="name"><br>
+    <label for="entity">Legal entity:</label><br>
+    <input type="text" id="entity" name="entity"><br>
+    <label for="country">Country:</label><br>
+    <input type="text" id="country" name="country"><br>
+    <label for="address">Address:</label><br>
+    <input type="text" id="address" name="address"><br>
+    <label for="city">City:</label><br>
+    <input type="text" id="city" name="city"><br>
+    <label for="state">State:</label><br>
+    <input type="text" id="state" name="state"><br>
+    <button id="save-button">Save</button>
+</div>
+<div style="display: inline-block;vertical-align: top">
+    <label for="search">Search company by name:</label><br>
+    <input type="text" id="search" name="search">
+    <button id="search-button">Search</button>
+    <div id="found-company"></div>
+</div>
+<div style="display: inline-block;vertical-align: top">
+    <table id="table" style="width:100%">
+        <tr>
+            <th>Company Name</th>
+            <th>Legal Entity</th>
+            <th>Country</th>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

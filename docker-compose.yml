@@ -1,0 +1,38 @@
+version: '3.8'
+services:
+  jake_database:
+    networks:
+      - jake
+    container_name: jake_database
+    image: 'mariadb:latest'
+    logging:
+      driver: json-file
+      options:
+        max-size: 5m
+        max-file: '10'
+    volumes:
+      - 'db:/var/lib/mysql'
+    ports:
+      - '3306:3306'
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+  jake:
+    networks:
+      - jake
+    container_name: jake
+    image: 'petrjahoda/jake:latest'
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '10'
+    ports:
+      - '90:80'
+    depends_on:
+      - jake_database
+    restart: always
+volumes:
+  db: null
+networks:
+  jake: null
